@@ -14,10 +14,7 @@ public:
     void resized() override;
 
 private:
-    // Référence au processeur
     AudioPluginAudioProcessor& processorRef;
-
-    // APVTS
     juce::AudioProcessorValueTreeState& apvts;
 
     // Sliders
@@ -25,23 +22,22 @@ private:
     juce::Slider filterResonanceSlider;
     juce::Slider lfoDepthSlider;
     juce::Slider lfoRateSlider;
-    juce::Slider filterGainSlider; // Nouveau slider pour le gain
+    juce::Slider filterGainSlider;
 
     // Attachments
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> filterFreqAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> filterResonanceAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> lfoDepthAttachment;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> lfoRateAttachment;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> filterGainAttachment; // Nouveau attachment
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> filterGainAttachment;
 
     // Labels
     juce::Label filterFreqLabel;
     juce::Label filterResonanceLabel;
     juce::Label lfoDepthLabel;
     juce::Label lfoRateLabel;
-    juce::Label filterGainLabel; // Nouveau label
+    juce::Label filterGainLabel;
 
-    // Méthode pour configurer un slider
     void setupSlider(juce::Slider& slider, juce::Label& label, const juce::String& name);
 
     //==============================================================================

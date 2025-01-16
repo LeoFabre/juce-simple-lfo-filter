@@ -54,7 +54,7 @@ private:
     static juce::AudioProcessorValueTreeState::ParameterLayout createParameters();
 
     // Filtre IIR
-    juce::dsp::IIR::Filter<float> filter;
+    juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> filter;
 
     // Coefficients du filtre
     juce::dsp::IIR::Coefficients<float>::Ptr currentFilter;
